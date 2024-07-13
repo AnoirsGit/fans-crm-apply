@@ -22,6 +22,12 @@ export class UsersService {
     return this.userModel.findByPk(id);
   }
 
+  async findByEmail(email: string): Promise<User> {
+    return this.userModel.findOne({
+      where: { email },
+    });
+  }
+
   async update(id: number, user: User): Promise<[number, User[]]> {
     const [affectedCount, updatedUsers] = await this.userModel.update(user, {
       where: { id },

@@ -1,16 +1,20 @@
-import * as React from 'react';
+// App.tsx
 
-function MyButton({ title }: { title: string }) {
-  return (
-    <button>{title}</button>
-  );
-}
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
-export default function MyApp() {
+const App: React.FC = () => {
   return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton title="I'm a button" />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        {/* Add more routes here */}
+      </Switch>
+    </Router>
   );
-}
+};
+
+export default App;

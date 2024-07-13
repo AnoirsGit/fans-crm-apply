@@ -1,9 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { User } from '../users/user.entitiy';
 
-console.log('KAVO ubit');
-console.log(process.env.MYSQL_USER);
-
 setTimeout(()=> (console.log('KAVO ubit')), 3000)
 export const databaseProviders = [
   {
